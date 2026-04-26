@@ -2,7 +2,7 @@
 
 **Ask your data anything. Finally, it speaks your language.**
 
-Lumin is an AI-powered data analysis platform. Upload a CSV, JSON, or text file, start a conversation, and get plain-English answers — no SQL, no code, no dashboards to configure. Lumin reads your data and talks back like a smart analyst who already understands it.
+Lumin is an AI-powered data analysis platform. Upload a CSV, JSON, or text file, start a conversation, and get plain-English answers, no SQL, no code, no dashboards to configure. Lumin reads your data and talks back like a smart analyst who already understands it.
 
 ---
 
