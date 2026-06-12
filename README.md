@@ -4,6 +4,8 @@
 
 Lumin is an AI-powered data analysis platform. Upload a CSV, JSON, or text file, start a conversation, and get plain-English answers, no SQL, no code, no dashboards to configure. Lumin reads your data and talks back like a smart analyst who already understands it.
 
+**Live demo:** https://lumin-tau.vercel.app — create a free account and upload any CSV to try it.
+
 ---
 
 ## What problem it solves
@@ -117,7 +119,7 @@ src/features/{feature}/
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/your-username/lumin.git
+git clone https://github.com/anesuruzvidzo1/lumin.git
 cd lumin
 bun install
 ```
