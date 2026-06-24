@@ -1,35 +1,21 @@
 # Lumin
 
-**Ask your data anything. Finally, it speaks your language.**
+AI data analysis platform. Upload a CSV, JSON, or text file, ask questions in plain English, and get answers — sometimes with a chart generated inline. No SQL, no dashboards to configure.
 
-Lumin is an AI-powered data analysis platform. Upload a CSV, JSON, or text file, start a conversation, and get plain-English answers, no SQL, no code, no dashboards to configure. Lumin reads your data and talks back like a smart analyst who already understands it.
-
-**Live demo:** https://lumin-tau.vercel.app — create a free account and upload any CSV to try it.
-
----
-
-## What problem it solves
-
-Most people who need answers from data don't have the skills to query a database or build a chart. They're stuck waiting on analysts, wrestling with spreadsheets, or making decisions without the full picture.
-
-Lumin removes that bottleneck. You upload a file, describe what you want to know, and get a clear answer — sometimes with a chart automatically generated. Key findings can be pinned for later, anomalies are flagged automatically, and a weekly email digest surfaces insights you might have missed.
-
----
+**Live demo:** https://lumin-tau.vercel.app
 
 ## Features
 
 | Feature | Description |
 |---|---|
-| **AI conversations** | Ask questions in plain English; Claude answers based on your actual data |
-| **Automatic charts** | When a chart explains the answer better, one is generated and rendered inline |
-| **Suggested questions** | When a file is uploaded, 5 relevant questions are generated based on the schema |
-| **Insight pinning** | Pin any AI response to a project's Insights panel so key findings are never lost |
-| **Anomaly alerts** | On upload, numeric columns are scanned for outliers, spikes, constant values, and missing data |
-| **PDF export** | Export any conversation as a formatted PDF report including pinned insights |
-| **Weekly digest** | Every Monday, project owners receive a plain-English email summary of their data insights |
-| **Multi-format support** | CSV, JSON, and plain text files up to 50 MB |
-
----
+| AI conversations | Ask questions in plain English; Claude answers based on your actual data |
+| Automatic charts | When a chart explains the answer better, one is generated and rendered inline |
+| Suggested questions | On upload, 5 relevant questions are generated based on the schema |
+| Insight pinning | Pin any AI response to a project's Insights panel so key findings are never lost |
+| Anomaly alerts | On upload, numeric columns are scanned for outliers, spikes, constant values, and missing data |
+| PDF export | Export any conversation as a formatted PDF report including pinned insights |
+| Weekly digest | Every Monday, project owners receive a plain English email summary of their data insights |
+| Multi-format support | CSV, JSON, and plain text files up to 50 MB |
 
 ## Tech stack
 
@@ -49,8 +35,6 @@ Lumin removes that bottleneck. You upload a file, describe what you want to know
 | Styling | Tailwind CSS v4 | Utility-first; dark-mode-first design |
 | Linting | Biome | Lint and format in a single fast tool |
 | Testing | Bun test + Testing Library | ~10x faster than Jest; co-located tests |
-
----
 
 ## Project structure
 
@@ -105,8 +89,6 @@ src/features/{feature}/
 ├── index.ts        # Public API — only this file is imported externally
 └── tests/          # Unit tests for this slice
 ```
-
----
 
 ## Running locally
 
@@ -184,8 +166,6 @@ bun run dev
 
 Open [http://localhost:3000](http://localhost:3000), register an account, and create your first project.
 
----
-
 ## Available commands
 
 ```bash
@@ -201,13 +181,11 @@ bun run db:push      # Push schema directly (dev only)
 bun run db:studio    # Open Drizzle Studio database GUI
 ```
 
----
-
 ## Deploying
 
-Lumin is designed to deploy on [Vercel](https://vercel.com). Push to a connected repository and set the environment variables in the Vercel project settings.
+Lumin deploys on [Vercel](https://vercel.com). Push to a connected repository and set the environment variables in the Vercel project settings.
 
-**Weekly digest cron** — add a `vercel.json` at the project root to schedule the digest:
+Weekly digest cron — add a `vercel.json` at the project root:
 
 ```json
 {
@@ -220,10 +198,6 @@ Lumin is designed to deploy on [Vercel](https://vercel.com). Push to a connected
 }
 ```
 
-Set `CRON_SECRET` in your Vercel environment and pass it as a `Authorization: Bearer <secret>` header from your cron job provider if using an external scheduler.
-
----
-
 ## Environment variables reference
 
 | Variable | Required | Description |
@@ -234,6 +208,6 @@ Set `CRON_SECRET` in your Vercel environment and pass it as a `Authorization: Be
 | `DATABASE_URL` | Yes | PostgreSQL connection string (transaction pooler, port 6543) |
 | `ANTHROPIC_API_KEY` | Yes | Anthropic API key for Claude |
 | `RESEND_API_KEY` | No | Resend API key for weekly email digests |
-| `DIGEST_FROM_EMAIL` | No | Sender address for digest emails (default: `digest@lumin.app`) |
-| `APP_URL` | No | Public app URL used in email links (default: `http://localhost:3000`) |
+| `DIGEST_FROM_EMAIL` | No | Sender address for digest emails |
+| `APP_URL` | No | Public app URL used in email links |
 | `CRON_SECRET` | No | Bearer token to secure the `/api/cron/weekly-digest` endpoint |
